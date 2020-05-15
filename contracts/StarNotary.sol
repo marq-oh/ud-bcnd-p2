@@ -38,18 +38,9 @@ contract StarNotary is ERC721 {
     function putStarUpForSale(uint256 _tokenId, uint256 _price) public returns (bool success) {
         require(ownerOf(_tokenId) == msg.sender, "You can't sale the Star you don't owned");
         starsForSale[_tokenId] = _price;
-        approve(ownerOf(_tokenId), _tokenId); // [MSJ]: approve sender to transfer token
+        approve(msg.sender, _tokenId); // [MSJ]: approve sender to transfer token
 		return true;
     }
-
-    /* Approve Caller
-    function approveCaller(address to, uint256 _tokenId) public {
-        address owner = ownerOf(_tokenId);
-        require(to != owner);
-        require(msg.sender == owner || isApprovedForAll(owner, msg.sender));
-
-        emit Approval(owner, to, _tokenId);
-    }*/
 
     // Function that allows you to convert an address into a payable address
     function _make_payable(address x) internal pure returns (address payable) {
