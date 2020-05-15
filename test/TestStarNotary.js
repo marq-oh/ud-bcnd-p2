@@ -34,8 +34,8 @@ it('lets user1 get the funds after the sale', async() => {
     let balance = web3.utils.toWei(".05", "ether");
     await instance.createStar('awesome star', starId, {from: user1});
     await instance.putStarUpForSale(starId, starPrice, {from: user1});
+    await instance.approveCaller(user2, starId, {from: user1}); // added
     let balanceOfUser1BeforeTransaction = await web3.eth.getBalance(user1);
-    //await instance.approveCaller(user2, starId);
     await instance.buyStar(starId, {from: user2, value: balance});
     let balanceOfUser1AfterTransaction = await web3.eth.getBalance(user1);
     let value1 = Number(balanceOfUser1BeforeTransaction) + Number(starPrice);
@@ -52,6 +52,7 @@ it('lets user2 buy a star, if it is put up for sale', async() => {
     let balance = web3.utils.toWei(".05", "ether");
     await instance.createStar('awesome star', starId, {from: user1});
     await instance.putStarUpForSale(starId, starPrice, {from: user1});
+    await instance.approveCaller(user2, starId, {from: user1}); // added
     let balanceOfUser1BeforeTransaction = await web3.eth.getBalance(user2);
     await instance.buyStar(starId, {from: user2, value: balance});
     assert.equal(await instance.ownerOf.call(starId), user2);
@@ -66,6 +67,7 @@ it('lets user2 buy a star and decreases its balance in ether', async() => {
     let balance = web3.utils.toWei(".05", "ether");
     await instance.createStar('awesome star', starId, {from: user1});
     await instance.putStarUpForSale(starId, starPrice, {from: user1});
+    await instance.approveCaller(user2, starId, {from: user1}); // added
     let balanceOfUser1BeforeTransaction = await web3.eth.getBalance(user2);
     const balanceOfUser2BeforeTransaction = await web3.eth.getBalance(user2);
     await instance.buyStar(starId, {from: user2, value: balance, gasPrice:0});
