@@ -35,15 +35,21 @@ contract StarNotary is ERC721 {
     }
 
     // Putting an Star for sale (Adding the star tokenid into the mapping starsForSale, first verify that the sender is the owner)
-    function putStarUpForSale(uint256 _tokenId, uint256 _price) public {
+    function putStarUpForSale(uint256 _tokenId, uint256 _price) public returns (bool success) {
         require(ownerOf(_tokenId) == msg.sender, "You can't sale the Star you don't owned");
         starsForSale[_tokenId] = _price;
+        approve(ownerOf(_tokenId), _tokenId); // [MSJ]: approve sender to transfer token
+		return true;
     }
 
-    // Approve Caller
-    function approveCaller(uint256 _tokenId, address _spender) public returns (bool) { 
-        approve(_spender, _tokenId);  
-    }
+    /* Approve Caller
+    function approveCaller(address to, uint256 _tokenId) public {
+        address owner = ownerOf(_tokenId);
+        require(to != owner);
+        require(msg.sender == owner || isApprovedForAll(owner, msg.sender));
+
+        emit Approval(owner, to, _tokenId);
+    }*/
 
     // Function that allows you to convert an address into a payable address
     function _make_payable(address x) internal pure returns (address payable) {
@@ -56,7 +62,7 @@ contract StarNotary is ERC721 {
         address ownerAddress = ownerOf(_tokenId);
         require(msg.value > starCost, "You need to have enough Ether");
 
-        approve(ownerAddress, _tokenId); // [MSJ]: approve sender to transfer token
+        require(_isApprovedOrOwner(ownerAddress, _tokenId)); // [MSJ]: approve sender to transfer token
         safeTransferFrom(ownerAddress, msg.sender, _tokenId); // We can't use _addTokenTo or_removeTokenFrom functions, now we have to use _transferFrom
         address payable ownerAddressPayable = _make_payable(ownerAddress); // We need to make this conversion to be able to use transfer() function to transfer ethers
         ownerAddressPayable.transfer(starCost);
