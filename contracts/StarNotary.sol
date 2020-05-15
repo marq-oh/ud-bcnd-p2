@@ -35,10 +35,14 @@ contract StarNotary is ERC721 {
     }
 
     // Putting an Star for sale (Adding the star tokenid into the mapping starsForSale, first verify that the sender is the owner)
-    function putStarUpForSale(uint256 _tokenId, uint256 _price) public returns (bool success) {
+    function putStarUpForSale(uint256 _tokenId, uint256 _price) public {
         require(ownerOf(_tokenId) == msg.sender, "You can't sale the Star you don't owned");
         starsForSale[_tokenId] = _price;
-        approve(msg.sender, _tokenId); // [MSJ]: approve sender to transfer token
+    }
+
+    // Approve Caller
+    function approveCaller(address buyer, uint256 _tokenId) public returns (bool success) {
+        approve(buyer, _tokenId); // [MSJ]: approve sender to transfer token
 		return true;
     }
 
