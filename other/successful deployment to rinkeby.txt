@@ -1,0 +1,136 @@
+PS C:\Users\marco\Documents\bc_proj\ud-bcnd-project-2> truffle migrate --reset --network rinkeby       
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\StarNotary.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\GSN\Context.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\introspection\ERC165.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\introspection\IERC165.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\math\SafeMath.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\token\ERC721\ERC721.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\token\ERC721\IERC721.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\token\ERC721\IERC721Enumerable.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\token\ERC721\IERC721Metadata.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\token\ERC721\IERC721Receiver.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\utils\Address.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\utils\EnumerableMap.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\utils\EnumerableSet.sol
+> Compiling .\node_modules\openzeppelin-solidity\contracts\utils\Strings.sol
+> Artifacts written to C:\Users\marco\Documents\bc_proj\ud-bcnd-project-2\build\contracts
+> Compiled successfully using:
+   - solc: 0.6.2+commit.bacdbe57.Emscripten.clang
+
+
+
+Migrations dry-run (simulation)
+===============================
+> Network name:    'rinkeby-fork'
+> Network id:      4
+> Block gas limit: 0x989680
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > block number:        6496372
+   > block timestamp:     1589601011
+   > account:             0xb932375cdfD0529E740bD08bB8Dd458e1985F9a7
+   > balance:             18.74789547
+   > gas used:            210453
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00210453 ETH
+
+   -------------------------------------
+   > Total cost:          0.00210453 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'StarNotary'
+   ----------------------
+   > block number:        6496374
+   > block timestamp:     1589601026
+   > account:             0xb932375cdfD0529E740bD08bB8Dd458e1985F9a7
+   > balance:             18.71627598
+   > gas used:            3134586
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.03134586 ETH
+
+   -------------------------------------
+   > Total cost:          0.03134586 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.03345039 ETH
+
+
+
+
+
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 0x989680
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x9dcf2b8e0d707a354032e774a00913ae2cbae146bd6ee2985c3aa6dc184ab5aa
+   > Blocks: 1            Seconds: 12
+   > contract address:    0xb14676fb07baCF5e30314a2742F60523497025fD
+   > block number:        6496374
+   > block timestamp:     1589601050
+   > account:             0xb932375cdfD0529E740bD08bB8Dd458e1985F9a7
+   > balance:             18.74774547
+   > gas used:            225453
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00225453 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00225453 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'StarNotary'
+   ----------------------
+   > transaction hash:    0x50e8628242cf80e4b8e555017895b2b453a5abec0ece75c585e9063ed278f0b1
+   > Blocks: 0            Seconds: 8
+   > contract address:    0x3DC18BB6DE634870066664f615CC2C8Bc5d901EF
+   > block number:        6496376
+   > block timestamp:     1589601080
+   > account:             0xb932375cdfD0529E740bD08bB8Dd458e1985F9a7
+   > balance:             18.71507598
+   > gas used:            3224586
+   > gas price:           10 gwei
+   > value sent:          0 ETH
+   > total cost:          0.03224586 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.03224586 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.03450039 ETH   
