@@ -3,10 +3,10 @@
 ## Description
 Second project for Blockchain Developer course, the intent of the project was to demonstrate learnings in creating a SmartContract using Solidity (with Truffle, Metamask, Infura and Remix). 
 
-Project contains:
-- SmartContract code written in Solidity
-- Front-end code in JavaScript and HTML (mostly provided as part of project, with the exception of the functions that had to be created for the project)
-- Unit Tests
+## Files
+- [SmartContract code written in Solidity](https://github.com/marq-oh/ud-bcnd-p2/tree/master/contracts)
+- [Front-end code in JavaScript and HTML (mostly provided as part of project, with the exception of the functions that had to be created for the project)](https://github.com/marq-oh/ud-bcnd-p2/tree/master/app/src)
+- [Unit Tests](https://github.com/marq-oh/ud-bcnd-p2/blob/master/test/TestStarNotary.js)
 
 ## Details
 |            Item           |               Value              |
