@@ -1,5 +1,5 @@
 # Project: Build CryptoStar Dapp on Ethereum
------
+
 ## Description
 Second project for Blockchain Developer course, the intent of the project was to demonstrate learnings in creating a SmartContract using Solidity (with Truffle, Metamask, Infura and Remix). 
 
